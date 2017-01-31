@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  <head>
+    <title></title>
+    <script>
+        function valida(){
+        var v=document.forms[0].valor.value;
+        if (v.indexOf(',')<0){
+             alert('Digite , para separa parte inteira da decimal');
+            }else{
+                document.forms[0].submit();
+            }
+            
+        }
+    </script>
+  </head>
+  <body>
+  <form action="TradutorServlet" name="f" method="post">
+      <input type="text" name="valor">
+      <input type="button" value="traduz" onclick="javascript:valida();">
+  </form>
+  
+  </body>
+</html>
