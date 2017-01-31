@@ -42,7 +42,7 @@ public class ZeroCemServlet extends HttpServlet {
                 jogo=new Jogo();
                 ses.setAttribute("jogo", jogo);
             }
-            
+            jogo.setNumero(Integer.parseInt(request.getParameter("numero")));
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -50,7 +50,7 @@ public class ZeroCemServlet extends HttpServlet {
             out.println("<title>Jogo Zero a Cem em Servlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ZeroCemServlet at " + jogo.getResposta() + "</h1>");
+            out.println("<h1>Resposta:  " + jogo.getResposta() + "</h1>");
             out.println("<form action=\"ZeroCemServlet\" method=\"POST\">\n" +
 "            Número: <input type=\"text\" name=\"numero\"/>\n" +
 "            <input type=\"submit\" value=\"Jogar\"/>\n" +
