@@ -48,7 +48,7 @@ public class Jogo {
        }else if (this.getNumero()<this.getSorteado()){
            resposta="O número que vc digitou é menor, digite um numero maior que " +this.getNumero();
        }else{
-           resposta="Parabéns, você acertou depois de "+this.tentaivas +"! O número sorteado é "+this.getSorteado();
+           resposta="Parabéns, você acertou depois de "+this.tentaivas + " tentativas! O número sorteado é "+this.getSorteado();
            this.sortear();
        }
        return resposta;
