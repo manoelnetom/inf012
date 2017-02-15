@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:A="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/facelets">
+    <A:head>
+        <title>Facelet Title</title>
+    </A:head>
+    <A:body>
+        Hello from Facelets
+        <A:form>
+            Nome: <A:inputText id="nome" value="#{controleLogin.usuario.login}" maxlength="30"/>
+            Senha:<A:inputSecret id="password" value="#{controleLogin.usuario.senha}" />
+            <A:commandButton actionListener="#{controleLogin.logar()}" value="OK"/>
+        </A:form>
+    </A:body>
+</html>
+
