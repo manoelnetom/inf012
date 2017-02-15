@@ -21,7 +21,7 @@ import negocio.Usuario;
 public class IMCControllerBean {
 
     private Usuario usuario;
-    private String message;
+  
  
     public IMCControllerBean() {
         this.usuario=new Usuario();
