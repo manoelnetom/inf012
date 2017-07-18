@@ -13,7 +13,7 @@ package modelo;
 public class Frase {
     private String texto;
     private int vogais;
-
+    private int consoantes;
     
     public String getTexto() {
         return texto;
@@ -23,10 +23,10 @@ public class Frase {
         this.texto = texto;
     }
 
-    public void setVogais(int vogais) {
-        this.vogais = vogais;
+    public int getConsoantes() {
+        return consoantes;
     }
-    
+
     
     public int getVogais(){
         this.processaFrase();
@@ -35,11 +35,14 @@ public class Frase {
     
     private void processaFrase(){
         this.vogais=0;
+        this.consoantes=0;
         for (int i = 0; i < this.getTexto().length(); i++) {
             char c=this.getTexto().toLowerCase().charAt(i);
             if(Character.isLetter(c)){
                 if((c=='a')||(c=='e')||(c=='i')||(c=='o')||(c=='u')){
                     this.vogais++;
+                }else{
+                    this.consoantes++;
                 }
             }
         }

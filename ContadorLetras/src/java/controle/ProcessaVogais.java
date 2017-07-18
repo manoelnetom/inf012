@@ -45,7 +45,8 @@ public class ProcessaVogais extends HttpServlet {
             out.println("<title>Titulo de Conta Vogais APP</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>O numero de vogais na Frase: "+frase.getTexto()+ " é  igual a:  "+frase.getVogais()+"</h1>");
+            out.println("<h1>O numero de vogais na Frase: "+texto+ " é  igual a:  "+frase.getVogais()+"</h1>");
+            out.println("<h1>E numero de consoantes é igual a: "+frase.getConsoantes()+"</h1>");
             out.println("</body>");
             out.println("</html>");
         }
