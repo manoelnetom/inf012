@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package controle;
 
 import java.io.IOException;
@@ -18,8 +19,8 @@ import modelo.Frase;
  *
  * @author ManoelNeto
  */
-@WebServlet(name = "ProcessaVogais", urlPatterns = {"/ProcessaVogais"})
-public class ProcessaVogais extends HttpServlet {
+@WebServlet(name = "ProcessaConsoantes", urlPatterns = {"/ProcessaConsoantes"})
+public class ProcessaConsoantes extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,7 +36,7 @@ public class ProcessaVogais extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String texto = request.getParameter("texto");
+             String texto = request.getParameter("texto");
             Frase frase = new Frase();
             frase.setTexto(texto);
 
@@ -46,8 +47,8 @@ public class ProcessaVogais extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
 
-            out.println("<h1>O numero de vogais na Frase: " + texto + " é  igual a:  " + frase.getVogais() + "</h1>");
-               // out.println("<h1>E numero de consoantes é igual a: " + frase.getConsoantes() + "</h1>");
+            //out.println("<h1>O numero de vogais na Frase: " + texto + " é  igual a:  " + frase.getVogais() + "</h1>");
+            out.println("<h1>E numero de consoantes é igual a: " + frase.getConsoantes() + "</h1>");
 
             out.println("</body>");
             out.println("</html>");

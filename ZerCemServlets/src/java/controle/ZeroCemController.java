@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package controle;
 
 import java.io.IOException;
@@ -12,14 +13,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Frase;
+import javax.servlet.http.HttpSession;
+import negocio.Jogo;
 
 /**
  *
  * @author ManoelNeto
  */
-@WebServlet(name = "ProcessaVogais", urlPatterns = {"/ProcessaVogais"})
-public class ProcessaVogais extends HttpServlet {
+@WebServlet(name = "ZeroCemController", urlPatterns = {"/ZeroCemController"})
+public class ZeroCemController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,25 +32,42 @@ public class ProcessaVogais extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    private Jogo jogo;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
+            HttpSession ses=request.getSession();
+            jogo =(Jogo)ses.getAttribute("jogo");
+            if (jogo==null){
+                jogo=new Jogo();
+                ses.setAttribute("jogo", jogo);
+            }
+            
+            int numeroDigitado= Integer.parseInt(request.getParameter("numero"));
+            
+          
+            jogo.setNumeroDigitado(numeroDigitado);
             /* TODO output your page here. You may use following sample code. */
-            String texto = request.getParameter("texto");
-            Frase frase = new Frase();
-            frase.setTexto(texto);
-
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Titulo de Conta Vogais APP</title>");
+            out.println("<title>Servlet Zero Cem Game</title>");            
             out.println("</head>");
             out.println("<body>");
-
-            out.println("<h1>O numero de vogais na Frase: " + texto + " é  igual a:  " + frase.getVogais() + "</h1>");
-               // out.println("<h1>E numero de consoantes é igual a: " + frase.getConsoantes() + "</h1>");
-
+            
+            out.println("<h1>" + jogo.getResultado() + "</h1>");
+            
+            out.println("<h1>O numero sorteado é: " + jogo.getNumeroSorteado() + "</h1>");
+            
+            out.println("<form action=\"ZeroCemController\" method=\"GET\">\n" +
+"            Digite um Número entre 0 e 100: <input type=\"text\" name=\"numero\"/>\n" +
+"            <input type=\"submit\" name=\"bt\" value=\"OK\"/>\n" +
+"        </form>");
+            
+           
             out.println("</body>");
             out.println("</html>");
         }

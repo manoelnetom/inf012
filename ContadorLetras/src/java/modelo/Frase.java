@@ -24,6 +24,7 @@ public class Frase {
     }
 
     public int getConsoantes() {
+        this.processaFrase();
         return consoantes;
     }
 

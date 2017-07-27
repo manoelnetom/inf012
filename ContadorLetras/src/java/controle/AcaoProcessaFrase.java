@@ -12,14 +12,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Frase;
 
 /**
  *
  * @author ManoelNeto
  */
-@WebServlet(name = "ProcessaVogais", urlPatterns = {"/ProcessaVogais"})
-public class ProcessaVogais extends HttpServlet {
+@WebServlet(name = "AcaoProcessaFrase", urlPatterns = {"/AcaoProcessaFrase"})
+public class AcaoProcessaFrase extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,23 +33,12 @@ public class ProcessaVogais extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            String texto = request.getParameter("texto");
-            Frase frase = new Frase();
-            frase.setTexto(texto);
-
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Titulo de Conta Vogais APP</title>");
-            out.println("</head>");
-            out.println("<body>");
-
-            out.println("<h1>O numero de vogais na Frase: " + texto + " é  igual a:  " + frase.getVogais() + "</h1>");
-               // out.println("<h1>E numero de consoantes é igual a: " + frase.getConsoantes() + "</h1>");
-
-            out.println("</body>");
-            out.println("</html>");
+            String acao = request.getParameter("bt");
+            if (acao.equalsIgnoreCase("vogais")) {
+                request.getRequestDispatcher("ContaVogais.jsp").forward(request, response);
+            } else if (acao.equalsIgnoreCase("Consoantes")) {
+                request.getRequestDispatcher("ContaConsoantes.jsp").forward(request, response);
+            }
         }
     }
 
