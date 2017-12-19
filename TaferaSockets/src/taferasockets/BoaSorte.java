@@ -5,6 +5,7 @@
  */
 package taferasockets;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -39,6 +40,7 @@ public String boaSorte( ){
 @Override
 public void run(){
     try {
+        PrintWriter esc2=new PrintWriter(new FileOutputStream(new File("")),true);
         PrintWriter esc=new PrintWriter(this.cliente.getOutputStream(),true);
         // (2) escolha uma mensagem aleatória do vetor e envie}  
         esc.println(boaSorte());
