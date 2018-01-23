@@ -18,7 +18,7 @@ public class Cliente {
         DataOutputStream out = new DataOutputStream(cliente.getOutputStream());
         DataInputStream in = new DataInputStream(cliente.getInputStream());
         byte[] vet = {1, 6, 3, 9, 2, 5, 4, 8, 7};
-        int op = 4;
+        int op = 1;
         out.write(op);// Defina Op 
         out.flush();
         out.write(vet.length);//tamanho
