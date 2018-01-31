@@ -19,7 +19,7 @@
         <form action="ForcaServlet" method="POST">
             <img src="<jsp:getProperty name="jogo" property="img"/>" width="308" height="310" alt="semnada"/><br>
             Letra:<input type="text" name="letra" />
-            <input type="submit" value="Jogar" name="bt"/><br> 
+            <input type="submit" value="Jogar" name="bt"/> 
              <input type="submit" value="Reiniciar" name="bt" /><br>
              <br>Letras já sorteadas: <jsp:getProperty name="jogo" property="letras"/><br>    
         </form>

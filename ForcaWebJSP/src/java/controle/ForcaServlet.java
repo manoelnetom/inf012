@@ -35,6 +35,7 @@ public class ForcaServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
             String acao = request.getParameter("bt");
             if(acao.equalsIgnoreCase("Iniciar")){
                 request.getRequestDispatcher("TelaInicailJogo.jsp").forward(request, response);
