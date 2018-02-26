@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Calcula IMC</title>
+    </h:head>
+    <h:body>
+        <h:form> 
+            <p:growl id="msgGrowl"  showDetail="true" sticky="false" />  
+
+            <p:panel header="Growl">  
+                <h:panelGrid columns="2" cellpadding="5">  
+                    <p:outputLabel for="peso" value="Peso:" />   
+                    <p:inputText id="peso" value="#{imcBean.usuario.peso}" required="true" />
+                    <p:outputLabel for="altura" value="Altura:" />   
+                    <p:inputText id="altura" value="#{imcBean.usuario.altura}" required="true" />
+                </h:panelGrid>  
+                <h:panelGrid columns="3" cellpadding="5">
+                    <p:commandButton value="Tradicional" actionListener="#{imcBean.calculaIMCTradicional()}" update="msgGrowl" />
+                    <p:commandButton value="Oxford" actionListener="#{imcBean.calculaIMCOxford()}" update="msgGrowl" />
+                    <p:commandButton value="Hildenburg" actionListener="#{imcBean.calculaIMCHildenburg()}" update="msgGrowl" />
+                </h:panelGrid>         
+
+            </p:panel> 
+        </h:form> 
+    </h:body>
+</html>
+
