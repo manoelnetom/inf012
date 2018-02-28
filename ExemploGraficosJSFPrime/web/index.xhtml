@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form> 
+            <p:growl id="msgGrowl"  showDetail="true" sticky="false" />  
+
+            <p:panel header="Growl" >  
+                <h:panelGrid columns="2" cellpadding="5">  
+                    <p:outputLabel for="nome" value="Nome:" />   
+                    <p:inputText id="nome" value="#{graficosBean.aluno.nome}" required="true" />
+                    <p:outputLabel for="nota" value="Nota:" />   
+                    <p:inputText id="nota" value="#{graficosBean.aluno.nota}" required="true" />
+                </h:panelGrid>  
+                <h:panelGrid columns="1" cellpadding="5">
+                    <p:commandButton value="ADD" actionListener="#{graficosBean.addNota()}" update="msgGrowl, gafico" />
+                </h:panelGrid>
+            </p:panel> 
+        </h:form> 
+        <p:chart id="grafico" type="bar" model="#{graficosBean.barModel}" style="height:300px"/>
+    </h:body>
+</html>
+
