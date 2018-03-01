@@ -79,7 +79,7 @@ public class GraficosBean implements Serializable {
 
     public void addNota() {
         FacesContext context = FacesContext.getCurrentInstance();
-        context.addMessage(null, new FacesMessage("Nota Atualizada com sucesso Com Sucesso", ""));
+        context.addMessage(null, new FacesMessage("Nota Atualizada com sucesso!", ""));
 
     }
 
