@@ -2,8 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
@@ -21,13 +19,13 @@
                     <p:inputText id="nota" value="#{graficosBean.aluno.nota}" required="true" />
                 </h:panelGrid>  
                 <h:panelGrid columns="1" cellpadding="5">
-                    <p:commandButton value="ADD" actionListener="#{graficosBean.addNota()}" update="msgGrowl" />
+                    <p:commandButton onclick="updateChart()" value="ADD" actionListener="#{graficosBean.addNota()}" update="msgGrowl"/>
                 </h:panelGrid>
-               
             </p:panel> 
-            
+            <p:chart id="myBarChart" type="bar" model="#{graficosBean.barModel}" style="height:300px"/>
+            <p:remoteCommand name="updateChart" update="myBarChart" actionListener="#{graficosBean.updateBarModel()}"/>
         </h:form> 
-         <p:chart type="bar" model="#{graficosBean.barModel}" style="height:300px"/>
+
     </h:body>
 </html>
 

@@ -30,55 +30,58 @@ public class GraficosBean implements Serializable {
     private BarChartModel barModel;
     private Aluno aluno;
     private ArrayList lista;
+
     public GraficosBean() {
         lista = new ArrayList();
-        aluno = new Aluno();
-         initBarModel();
+        aluno = new Aluno("", 8);
+        initBarModel();
     }
 
     public Aluno getAluno() {
         return aluno;
     }
-    
- 
+
     public BarChartModel getBarModel() {
         return barModel;
     }
-    
+
     private void initBarModel() {
         barModel = new BarChartModel();
         barModel.setTitle("Grafico de Notas da Prova");
         barModel.setLegendPosition("ne");
         ChartSeries notas = new ChartSeries();
         notas.setLabel("Prova 1");
+        notas.set("Manoel", 8);
         barModel.addSeries(notas);
+        //notas.getData().clear();
         Axis xAxis = barModel.getAxis(AxisType.X);
         xAxis.setLabel("Nome");
-         
+
         Axis yAxis = barModel.getAxis(AxisType.Y);
         yAxis.setLabel("Nota");
         yAxis.setMin(0);
         yAxis.setMax(10);
     }
-    
 
-    
-    public void addNota(){
-        
-       //lista.add(aluno);
-       
-        //List<ChartSeries> series;
-       // series = barModel.getSeries();
-        
-        //for (int i = 0; i < lista.size(); i++) {
-          // Aluno temp = (Aluno) lista.get(i);    
-         //  series.get(0).set(temp.getNome(), temp.getNota());
-        //}
-        
-        FacesContext context = FacesContext.getCurrentInstance();
-        //this.initBarModel();
-        context.addMessage(null, new FacesMessage("Nota Add Com Sucesso", ""));
-    
+    public void updateBarModel() {
+
+        ChartSeries series = barModel.getSeries().get(0);
+        if (lista.size() == 0) {
+            series.getData().clear();
+        }
+        lista.add(new Aluno(aluno.getNome(), aluno.getNota()));
+        for (int i = 0; i < lista.size(); i++) {
+            Aluno temp = (Aluno) lista.get(i);
+            series.set(temp.getNome(), temp.getNota());
+            System.out.println(temp.getNome());
+        }
     }
-    
+
+    public void addNota() {
+        System.out.println("add nota");
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.addMessage(null, new FacesMessage("Nota Add Com Sucesso", ""));
+
+    }
+
 }
