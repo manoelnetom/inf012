@@ -19,7 +19,7 @@
                     <p:inputText id="nota" value="#{graficosBean.aluno.nota}" required="true" />
                 </h:panelGrid>  
                 <h:panelGrid columns="1" cellpadding="5">
-                    <p:commandButton onclick="updateChart()" value="ADD" actionListener="#{graficosBean.addNota()}" update="msgGrowl"/>
+                    <p:commandButton onclick="updateChart()" value="Atualizar" actionListener="#{graficosBean.addNota()}" update="msgGrowl"/>
                 </h:panelGrid>
             </p:panel> 
             <p:chart id="myBarChart" type="bar" model="#{graficosBean.barModel}" style="height:300px"/>
