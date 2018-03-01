@@ -33,7 +33,7 @@ public class GraficosBean implements Serializable {
 
     public GraficosBean() {
         lista = new ArrayList();
-        aluno = new Aluno("", 8);
+        aluno = new Aluno("", 0);
         initBarModel();
     }
 
