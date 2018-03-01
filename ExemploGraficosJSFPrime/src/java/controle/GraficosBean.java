@@ -8,7 +8,11 @@ package controle;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import negocio.Aluno;
 import org.primefaces.model.chart.Axis;
 import org.primefaces.model.chart.AxisType;
@@ -23,49 +27,31 @@ import org.primefaces.model.chart.ChartSeries;
 @SessionScoped
 public class GraficosBean implements Serializable {
 
-    /**
-     * Creates a new instance of GraficosBean
-     */
     private BarChartModel barModel;
     private Aluno aluno;
+    private ArrayList lista;
     public GraficosBean() {
+        lista = new ArrayList();
+        aluno = new Aluno();
+         initBarModel();
     }
 
     public Aluno getAluno() {
         return aluno;
     }
     
-    @PostConstruct
-    public void init() {
-        createBarModel();
-    }
  
     public BarChartModel getBarModel() {
         return barModel;
     }
     
-    private BarChartModel initBarModel() {
-        BarChartModel model = new BarChartModel();
- 
-        ChartSeries notas = new ChartSeries();
-        notas.setLabel("Prova 1");
-        notas.set("Manoel", 8);
-        notas.set("Caio", 9);
-        notas.set("Joao", 7);
-        notas.set("Milena", 8);
-        notas.set("Ricardo", 7);
-        model.addSeries(notas);
-       
-         
-        return model;
-    }
-    
-    private void createBarModel() {
-        barModel = initBarModel();
-         
+    private void initBarModel() {
+        barModel = new BarChartModel();
         barModel.setTitle("Grafico de Notas da Prova");
         barModel.setLegendPosition("ne");
-         
+        ChartSeries notas = new ChartSeries();
+        notas.setLabel("Prova 1");
+        barModel.addSeries(notas);
         Axis xAxis = barModel.getAxis(AxisType.X);
         xAxis.setLabel("Nome");
          
@@ -75,8 +61,24 @@ public class GraficosBean implements Serializable {
         yAxis.setMax(10);
     }
     
+
+    
     public void addNota(){
         
+       //lista.add(aluno);
+       
+        //List<ChartSeries> series;
+       // series = barModel.getSeries();
+        
+        //for (int i = 0; i < lista.size(); i++) {
+          // Aluno temp = (Aluno) lista.get(i);    
+         //  series.get(0).set(temp.getNome(), temp.getNota());
+        //}
+        
+        FacesContext context = FacesContext.getCurrentInstance();
+        //this.initBarModel();
+        context.addMessage(null, new FacesMessage("Nota Add Com Sucesso", ""));
+    
     }
     
 }

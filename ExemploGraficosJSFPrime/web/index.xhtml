@@ -21,11 +21,13 @@
                     <p:inputText id="nota" value="#{graficosBean.aluno.nota}" required="true" />
                 </h:panelGrid>  
                 <h:panelGrid columns="1" cellpadding="5">
-                    <p:commandButton value="ADD" actionListener="#{graficosBean.addNota()}" update="msgGrowl, gafico" />
+                    <p:commandButton value="ADD" actionListener="#{graficosBean.addNota()}" update="msgGrowl" />
                 </h:panelGrid>
+               
             </p:panel> 
+            
         </h:form> 
-        <p:chart id="grafico" type="bar" model="#{graficosBean.barModel}" style="height:300px"/>
+         <p:chart type="bar" model="#{graficosBean.barModel}" style="height:300px"/>
     </h:body>
 </html>
 
