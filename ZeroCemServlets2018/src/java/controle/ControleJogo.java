@@ -55,7 +55,12 @@ public class ControleJogo extends HttpServlet {
             out.println("<body>");
             out.println("<h1> Sorteado: " + jogo.getNumeroSorteado() + "</h1>");
             out.println("<h1> " + jogo.getResultado() + "</h1>");
-            out.println("</body>");
+             out.println(" <form action=\"ControleJogo\" method=\"POST\">\n" +
+"            Numero: <input type=\"text\" name=\"numero\"/><br>\n" +
+"            <input type=\"submit\" name=\"bt\" value=\"Jogar\"/><br>\n" +
+"        </form>");
+             out.println("</body>");
+           
             out.println("</html>");
         }
     }
