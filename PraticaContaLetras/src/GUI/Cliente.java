@@ -85,15 +85,15 @@ public class Cliente extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         try {
-            Socket cliente =new Socket("127.0.0.1",1234);
-            PrintWriter escrever =new PrintWriter(cliente.getOutputStream(),true);
+            Socket cliente = new Socket("127.0.0.1", 1234);
+            PrintWriter escrever = new PrintWriter(cliente.getOutputStream(), true);
             escrever.println(this.jTextField1.getText());
             Scanner ler = new Scanner(cliente.getInputStream());
             jLabel2.setText(ler.nextLine());
         } catch (Exception ex) {
-        
+            ex.printStackTrace();
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
