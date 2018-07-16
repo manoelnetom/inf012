@@ -37,7 +37,7 @@ public class ConroleContaCaracteres extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
            
             Texto texto = new Texto(request.getParameter("texto"));
-            String resposta="";
+            String resposta;
             String bt=request.getParameter("bt");
             if(bt.equalsIgnoreCase("Vogais")){
                 resposta=texto.getVogais();
@@ -49,7 +49,7 @@ public class ConroleContaCaracteres extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ConroleContaCaracteres</title>");            
+            out.println("<title>Conta Caracteres!!!</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>" + resposta + "</h1>");

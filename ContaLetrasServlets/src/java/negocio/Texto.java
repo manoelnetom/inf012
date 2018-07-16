@@ -40,14 +40,6 @@ public class Texto {
         }
     }
 
-    public String responder() {
-        this.processaFrase();
-        String resp = "O número de Vogais é: " + this.vogais;
-        resp += ". O número de consonates é: " + this.consoantes;
-        resp += ". O número de outros é: " + this.outros;
-
-        return resp;
-    }
     
     public String getVogais() {
         this.processaFrase();
@@ -65,11 +57,11 @@ public class Texto {
         return  "O número de outros é: " + this.outros;
     }
     
-    public String getFrase() {
+    private String getFrase() {
         return frase;
     }
 
-    public void setFrase(String frase) {
+    private void setFrase(String frase) {
         this.frase = frase;
     }
 
