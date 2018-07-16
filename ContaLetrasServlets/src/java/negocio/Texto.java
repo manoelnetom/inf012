@@ -5,10 +5,6 @@
  */
 package negocio;
 
-/**
- *
- * @author aluno
- */
 public class Texto {
 
     private String frase;
@@ -39,8 +35,7 @@ public class Texto {
             }
         }
     }
-
-    
+   
     public String getVogais() {
         this.processaFrase();
         String resp = "O número de Vogais é: " + this.vogais;

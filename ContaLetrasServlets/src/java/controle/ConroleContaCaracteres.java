@@ -53,7 +53,20 @@ public class ConroleContaCaracteres extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>" + resposta + "</h1>");
-            out.println("</body>");
+            out.println(" <form action=\"ConroleContaCaracteres\" method=\"POST\">\n" +
+"            <table align=\"center\" border=\"0\">\n" +
+"                <tr>\n" +
+"                    <td>Frase:</td>\n" +
+"                    <td><input type=\"text\" name=\"texto\"/></td>\n" +
+"                    <td>&nbsp;</td>\n" +
+"                </tr>\n" +
+"                <tr>\n" +
+"                    <td><input type=\"submit\" name=\"bt\" value=\"Vogais\"/></td>\n" +
+"                    <td align=\"center\"><input type=\"submit\" name=\"bt\" value=\"Consoantes\"/></td>\n" +
+"                    <td><input type=\"submit\" name=\"bt\" value=\"Outros\"/></td>\n" +
+"                </tr>\n" +
+"            </table>\n" +
+"        </form></body>");
             out.println("</html>");
         }
     }
