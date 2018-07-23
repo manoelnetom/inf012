@@ -16,6 +16,7 @@
         <jsp:setProperty name="jogo" property="numeroDigitado"/>
         <h1>Voce digitou: <jsp:getProperty name="jogo" property="numeroDigitado"/></h1>
         <h1><jsp:getProperty name="jogo" property="resultado"/></h1>
+        
          <form action="Jogo.jsp" method="POST">
             Numero: <input type="text" name="numeroDigitado"/><br>
             <input type="submit" name="bt" value="Jogar"/><br>
