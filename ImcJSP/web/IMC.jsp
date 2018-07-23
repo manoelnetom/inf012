@@ -14,10 +14,7 @@
     <body>
         <jsp:useBean id="pessoa" class="negocio.Usuario" scope="page"/>
         <jsp:setProperty name="pessoa" property="*"/>
-        <%
-                String s="";
         
-        %>
         <h1>
             <jsp:getProperty name="pessoa" property="imcTradicional"/>
         </h1>
