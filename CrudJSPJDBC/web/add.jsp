@@ -12,7 +12,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>add</h1>
+        <jsp:useBean id="agenda" class="negocio.Agenda" scope="session"/>
+        <jsp:setProperty name="agenda" property="*"/>
+        <h1><% 
+            out.println(agenda.addPessoa()); 
+        %></h1>
+       
          <a href="index.html">VOLTAR</a>
     </body>
 </html>

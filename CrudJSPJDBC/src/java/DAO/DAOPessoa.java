@@ -15,5 +15,5 @@ import model.Pessoa;
 public interface DAOPessoa {
     
     public String addPessoas(Pessoa pessoa) ;
-    public List buscarPessoas(Pessoa pessoa) throws Exception;
+    public List buscarPessoas(Pessoa pessoa) ;
 }

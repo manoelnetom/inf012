@@ -6,8 +6,10 @@
 package DAO;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,8 +51,31 @@ public class DaoPessoaDerby implements DAOPessoa{
     }
 
     @Override
-    public List buscarPessoas(Pessoa pessoa) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List buscarPessoas(Pessoa pessoa) {
+        
+        ArrayList lista=new ArrayList();
+        Statement st;
+       
+        try {
+            st = this.conn.createStatement();
+            ResultSet rs = st.executeQuery("Select * from SA.PESSOAS where nome like '%"+pessoa.getNome()+"%'");
+            while(rs.next()){
+                Pessoa p = new Pessoa();
+                p.setCpf(rs.getString("cpf"));
+                p.setNome(rs.getString("nome"));
+                p.setTelefone(rs.getString("telefone"));
+                lista.add(p);
+            }
+            
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoPessoaDerby.class.getName()).log(Level.SEVERE, null, ex);
+           
+        }
+        return lista;
+        
+        
+        
     }
     
 }
