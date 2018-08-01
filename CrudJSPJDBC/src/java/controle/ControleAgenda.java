@@ -34,10 +34,13 @@ public class ControleAgenda extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String acao = request.getParameter("acao");
+            
             if(acao.equalsIgnoreCase("add")){
                 request.getRequestDispatcher("add.jsp").forward(request, response);
             }else  if(acao.equalsIgnoreCase("buscar")){
                 request.getRequestDispatcher("busca.jsp").forward(request, response);
+            }else  if(acao.equalsIgnoreCase("editar")){
+                request.getRequestDispatcher("editar.jsp").forward(request, response);
             }
         }
     }

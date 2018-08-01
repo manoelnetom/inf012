@@ -15,5 +15,6 @@ import model.Pessoa;
 public interface DAOPessoa {
     
     public String addPessoas(Pessoa pessoa) ;
-    public List buscarPessoas(Pessoa pessoa) ;
+    public List buscarPessoas(Pessoa pessoa);
+    public Pessoa getPessoa(String cpf);
 }

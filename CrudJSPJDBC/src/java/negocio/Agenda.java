@@ -23,6 +23,11 @@ public class Agenda {
         this.dao = new DaoPessoaDerby();
     }
     
+    public void setSelecetdPessoa(){
+        String cpf=this.local.getCpf();
+        this.local = dao.getPessoa(cpf);
+    }
+    
     public String addPessoa(){
         return this.dao.addPessoas(local);
     }

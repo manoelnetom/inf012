@@ -77,5 +77,25 @@ public class DaoPessoaDerby implements DAOPessoa{
         
         
     }
+
+    @Override
+    public Pessoa getPessoa(String cpf) {
+        
+     Statement st;
+      Pessoa p = new Pessoa(); 
+        try {
+            st = this.conn.createStatement();
+            ResultSet rs = st.executeQuery("Select * from SA.PESSOAS where  cpf= '"+cpf+"'");
+            while(rs.next()){          
+                p.setCpf(rs.getString("cpf"));
+                p.setNome(rs.getString("nome"));
+                p.setTelefone(rs.getString("telefone"));
+            }   
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoPessoaDerby.class.getName()).log(Level.SEVERE, null, ex);
+           
+        }
+        return p;
+    }
     
 }

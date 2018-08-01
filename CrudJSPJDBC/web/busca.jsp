@@ -26,7 +26,7 @@
               
             <tr>
                 <td><%=p.getCpf()%></td>
-                <td><a href="ControleAgenda?acao='editar'&cpf='<%=p.getCpf()%>'"> <%=p.getNome()%></a></td>
+                <td><a href="ControleAgenda?acao=editar&cpf=<%=p.getCpf()%>"> <%=p.getNome()%></a></td>
   
             </tr>
             <%  }
