@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form> 
+            <p:growl id="growl" showDetail="true" sticky="true" />  
+
+            <p:panel header="IMCs">  
+                <h:panelGrid columns="2" cellpadding="5">  
+                    <p:outputLabel for="peso" value="Peso:" />   
+                    <p:inputText id="peso" value="#{imcBean.usuario.peso}" required="true" />
+                    <p:outputLabel for="altura" value="Altura:" />   
+                    <p:inputText id="altura" value="#{imcBean.usuario.altura}" required="true" />  
+                </h:panelGrid>  
+                <p:commandButton value="Calacular" actionListener="#{imcBean.calcularIMC}" update="growl" />  
+            </p:panel> 
+        </h:form>  
+    </h:body>
+</html>
+
