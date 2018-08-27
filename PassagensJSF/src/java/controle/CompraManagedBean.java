@@ -37,9 +37,6 @@ public class CompraManagedBean {
         return passagem;
     }
 
-    public void setPassagem(PassagemAerea passagem) {
-        this.passagem = passagem;
-    }
 
     public List<PassagemAerea> getPassagens() {
         try {

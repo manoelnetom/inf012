@@ -23,10 +23,14 @@
                     <p:outputLabel for="valor" value="Valor"/>   
                     <p:inputText id="valor" value="#{compraManagedBean.passagem.valor}" required="true" />
                 </h:panelGrid>  
-                <p:commandButton value="Comprar" actionListener="#{compraManagedBean.comprar}" update="growl,tabela" />
-                <p:commandButton value="Buscar" actionListener="#{compraManagedBean.buscar}" update="growl,tabela" />
+                <p:commandButton value="Comprar" actionListener="#{compraManagedBean.comprar}" update="growl, tabela" />
+                <p:commandButton value="Buscar" actionListener="#{compraManagedBean.buscar}" update="growl, tabela" />
             </p:panel> 
-            <p:dataTable id="tabela" var="passagem" value="#{compraManagedBean.passagens}">
+            
+            <p:dataTable id="tabela" var="passagem" value="#{compraManagedBean.passagens}" rows="10"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15">
                 <p:column headerText="Nome">
                     <h:outputText value="#{passagem.nome}" />
                 </p:column>
@@ -43,6 +47,7 @@
                     <h:outputText value="#{passagem.valor}" />
                 </p:column>
             </p:dataTable>
+            
         </h:form>  
     </h:body>
 </html>
