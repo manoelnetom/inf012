@@ -16,6 +16,10 @@ public class PassagemAerea {
     private String destino;
     private double valor;
 
+    public PassagemAerea() {
+    }
+
+    
     public String getNome() {
         return nome;
     }

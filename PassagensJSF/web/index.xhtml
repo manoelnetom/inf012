@@ -8,7 +8,7 @@
     <h:head>
         <title>Facelet Title</title>
     </h:head>
-   <h:body>
+    <h:body>
         <h:form> 
             <p:growl id="growl" showDetail="true" sticky="true" />  
 
@@ -23,9 +23,26 @@
                     <p:outputLabel for="valor" value="Valor"/>   
                     <p:inputText id="valor" value="#{compraManagedBean.passagem.valor}" required="true" />
                 </h:panelGrid>  
-                <p:commandButton value="Comprar" actionListener="#{compraManagedBean.comprar}" update="growl" />
-                <p:commandButton value="Buscar" actionListener="#{compraManagedBean.buscar}" update="growl" />
+                <p:commandButton value="Comprar" actionListener="#{compraManagedBean.comprar}" update="growl,tabela" />
+                <p:commandButton value="Buscar" actionListener="#{compraManagedBean.buscar}" update="growl,tabela" />
             </p:panel> 
+            <p:dataTable id="tabela" var="passagem" value="#{compraManagedBean.passagens}">
+                <p:column headerText="Nome">
+                    <h:outputText value="#{passagem.nome}" />
+                </p:column>
+
+                <p:column headerText="Origem">
+                    <h:outputText value="#{passagem.origem}" />
+                </p:column>
+
+                <p:column headerText="Destino">
+                    <h:outputText value="#{passagem.destino}" />
+                </p:column>
+
+                <p:column headerText="Valor">
+                    <h:outputText value="#{passagem.valor}" />
+                </p:column>
+            </p:dataTable>
         </h:form>  
     </h:body>
 </html>
