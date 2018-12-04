@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.*;
 
 public class HttpRequest
-    extends Thread {
+    implements Runnable {
 
   final static String CRLF = "\r\n";
   private Socket socket;
@@ -50,14 +50,17 @@ public class HttpRequest
 
     //Open the requested file.
     FileInputStream fis = null;
+    
     boolean fileExists = true;
     try {
       fis = new FileInputStream("/Users/ManoelNeto/Downloads/inf012/ServidorWeb/src/sevidorweb/"+fileName);
     }
     catch (FileNotFoundException e) {
-      fileExists = false;
+    
+      fileExists = true;
     }
 
+  
     // Construct the response message.
     String statusLine = null;
     String contentTypeLine = null;

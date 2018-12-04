@@ -10,8 +10,8 @@ public class WebServer {
     ServerSocket serv= new ServerSocket(port);
     while (true) {
       Socket listem=serv.accept();
-      HttpRequest request = new HttpRequest(listem);
-      request.start();
+      Thread t=new Thread(new HttpRequest(listem));
+      t.start();
     }
   }
 }
