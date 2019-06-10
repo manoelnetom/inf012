@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package servicos;
 
 import java.net.ServerSocket;
 import java.net.Socket;

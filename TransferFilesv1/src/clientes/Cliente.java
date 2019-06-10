@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package clientes;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,8 +42,8 @@ public class Cliente {
     public void sendFile() throws Exception {
         Thread.sleep(1000); 
         OutputStream os = this.socket.getOutputStream();
-        PrintWriter out=new PrintWriter(os,true);
-        out.println(arquivo.getName());
+        PrintWriter out=new PrintWriter(os,true);//Filtro de Escrita 
+        out.println(arquivo.getName());//Envia Nome do arquivo "String" 
         FileInputStream fis = new FileInputStream(arquivo);
         byte[] buffer = new byte[1024];
         int bytes;

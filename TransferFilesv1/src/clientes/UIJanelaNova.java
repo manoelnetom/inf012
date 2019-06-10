@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package visao;
+package clientes;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import model.Cliente;
 
 /**
  *
@@ -157,6 +156,7 @@ Cliente cliente;
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new UIJanelaNova().setVisible(true);
             }
