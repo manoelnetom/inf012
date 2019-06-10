@@ -26,17 +26,17 @@ public class Usuario {
     }
 
     
-    public String getImcTradicional(){
+    public String getIMCTradicional(){
         double valor=(this.getPeso()/Math.pow(this.altura, 2));
         return "O seu IMC pela formula tradicional é: "+ valor; 
     }
     
-    public String getImcOxford(){
+    public String getIMCOxford(){
         double valor=(1.3*this.getPeso()/Math.pow(this.altura, 2.5));
         return "O seu IMC pela formula de OXFORD é: "+ valor; 
     }
     
-    public String getImcHildenburg(){
+    public String getIMCHildenburg(){
         double valor=(1.72*this.getPeso()/Math.pow(this.altura, 3.06));
         return "O seu IMC pela formula de Hildenburg é: "+ valor; 
     }
