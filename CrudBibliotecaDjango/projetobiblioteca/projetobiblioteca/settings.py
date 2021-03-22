@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'biblioteca.apps.BibliotecaConfig'
 ]
 
-#AUTH_USER_MODEL ='biblioteca.CustomUser'
+AUTH_USER_MODEL ='biblioteca.Usuario'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

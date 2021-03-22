@@ -1,0 +1,38 @@
+body{
+    background-color: lightcoral;
+    font-family: cursive;
+}
+
+.fomulario{
+    display: flex;
+    flex-direction: column;
+    width: 384px;
+    margin: auto;
+  }
+
+  div{
+    margin: 0.5rem auto 0;
+    width: 24rem;
+    border: 1px solid;
+    color: #fff;
+    font-family:cursive;
+  }
+    input {
+      margin-bottom: 1rem;
+      padding: 0 0.5rem;
+      width: inherit;
+      height: 2rem;
+      border: none;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  
+    input[type="button"] {
+      height: 2.5rem;
+      font-size: 1rem;
+      color: #fff;
+      background: #0971f1;
+      cursor: pointer;
+      font-family: fantasy;
+    }
+  
