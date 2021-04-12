@@ -1,0 +1,14 @@
+header{
+    text-align: center;
+}
+
+p{
+    text-align: center justify;
+}
+
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    margin: 50px auto;
+}

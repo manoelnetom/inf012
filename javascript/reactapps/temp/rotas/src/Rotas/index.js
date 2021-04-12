@@ -11,7 +11,7 @@ function Rotas(){
         <Menu/>
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route path="/sobre" component={Sobre}/>
+          <Route path="/sobre/:id" component={Sobre}/>
           <Route path="*" component={Erro}/>
         </Switch>
         </BrowserRouter>

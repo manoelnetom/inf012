@@ -1,0 +1,9 @@
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+

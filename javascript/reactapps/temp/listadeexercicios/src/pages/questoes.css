@@ -1,0 +1,18 @@
+.questao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto{
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    width: 350;
+    margin: 50px auto;
+}
