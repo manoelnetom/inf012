@@ -1,6 +1,6 @@
 
 import './index.css'
-import Rotas from './routes.js'
+import Rotas from './rotas.js'
 import 'react-toastify/dist/ReactToastify.css';
 import {ToastContainer} from 'react-toastify'
 

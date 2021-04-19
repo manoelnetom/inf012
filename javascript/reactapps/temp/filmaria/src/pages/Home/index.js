@@ -22,9 +22,8 @@ export default function Home() {
                         <article key={item.id}>
                             <strong>{item.nome}</strong>
                             <img src={item.foto} alt={item.nome} />
-                            <Link to="/">Acessar</Link>
+                            <Link to={`/filme/${item.id}`}>Acessar</Link>
                         </article>
-
                     );
                 })}
 
