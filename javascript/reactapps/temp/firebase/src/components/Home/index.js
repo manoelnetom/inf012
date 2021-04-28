@@ -42,7 +42,7 @@ useEffect(()=>{
     })
   }
 
-  async function buscarPost(){
+ /* async function buscarPost(){
     await firebase.firestore().collection('posts')
     .doc('1')
     .get()
@@ -56,7 +56,7 @@ useEffect(()=>{
     })
 
   }
-
+*/
   async function buscarPosts(){
     await firebase.firestore().collection('posts')
     .get()
@@ -106,8 +106,6 @@ async function excluirPost(postId){
         <button onClick={()=>{addPost()}}>Add Post</button>
         <button onClick={()=>{buscarPosts()}}>Listar Post</button>
         <button onClick={()=>{editPost()}}>Editar Post</button>
-
-
         <ul>
           {posts.map((post)=>{
             return(

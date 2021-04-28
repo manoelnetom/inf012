@@ -5,6 +5,7 @@ function Menu() {
         <div className="topnav">
             <Link to="/">Home</Link>
             <Link to="/login">Login</Link>
+            <Link to="/usuarios">Usuarios</Link>
         </div>
     );
 }
