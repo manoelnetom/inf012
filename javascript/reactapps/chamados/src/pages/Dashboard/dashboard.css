@@ -1,0 +1,135 @@
+
+.dashboard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dashboard span{
+  margin: 2em 0;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.new{
+  float:right;
+  margin-bottom: 1.5em;
+  background-color: #83bf02;
+  color: #FFF;
+  border:0;
+  padding: .5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  border-radius: 6px;
+  transition: ease-in 0.2s;
+}
+
+.new svg{
+  margin-right: 5px;
+}
+
+.new:hover{
+  background-color: #5fd204;
+  transform: scale(1.1);
+}
+
+table{
+  border:1px solid #CCC;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption{
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr{
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td{
+  padding: .62em;
+  text-align: center;
+}
+
+table th{
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+table td .action{
+  border:0;
+  padding: 5px;
+  margin-right: 2px;
+  align-items: center;
+  display: inline-block;
+  border-radius: 4px;;
+}
+
+table td .action svg{
+  vertical-align: middle;
+}
+
+table td .badge{
+  padding: 3px;
+  border-radius: 3px;
+  color: #FFF;
+}
+
+@media screen and (max-width: 600px){
+  table{
+    border: 0;
+  }
+
+  table caption{
+    font-size: 1.3em;
+  }
+
+  table thead{
+    border:none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr{
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .65em;
+  }
+
+  table td{
+    border-bottom: 1px solid #DDD;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+
+  table td::before{
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child{
+    border-bottom: 0;
+  }
+
+}
