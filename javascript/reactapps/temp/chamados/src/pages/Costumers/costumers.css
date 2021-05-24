@@ -1,0 +1,10 @@
+.button-costumers{
+    height: 35px;
+    border-radius: 7px;
+    border: 0;
+    font-size: 1.3em;
+    background-color: #181e2c;
+    color: #FFF;
+    width: 100px;
+    margin-left: auto; 
+}

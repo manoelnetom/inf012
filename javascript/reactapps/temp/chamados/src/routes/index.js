@@ -5,6 +5,7 @@ import SingUp from '../pages/SignUp';
 import Profile from '../pages/Profile';
 
 import Route from './MyRoute'
+import Costumers from '../pages/Costumers';
 export default function  Rotas() {
     return(
         
@@ -13,6 +14,7 @@ export default function  Rotas() {
             <Route exact path="/register" component={SingUp}/>
             <Route  isPrivate path="/dashboard"  component={Dashboard}/>
             <Route isPrivate path="/profile" component={Profile}/>
+            <Route isPrivate path="/costumers" component={Costumers}/>
         </Switch>
       
     );
